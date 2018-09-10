@@ -1,0 +1,32 @@
+HasMap stores data in series of buckets, synchronizing >> problematic...speed as get(), put(), size(), containsKey() etc will synchronize on the map
+
+lock striping : locking on a portion that is being accessed
+
+Concurrent HM : lock striping +  volatile variables >> strip lock when writing, no lock when reading
+
+
+In Collections.synchronizedMap(...)  iteration over the map must occur whilst synchronized on the map in order to be thread-safe. coz if one thread updates teh value while other one is iterationg over, there may be ConcurrentModificationException.
+
+In ConcurrntHashMap, other threads can concurrently access the map.
+Thread that is iterating over is not guaranteed to "see" updates since the iteration began, but it will still see the map in a "safe state", reflecting the state at the time iteration began.
+This is perfect for cases where we want iteration not to affect concurrency
+But as there's no way to completely lock a ConcurrentHashMap, there's no easy option for taking a "snapshot" of the map as a truly atomic operation.
+
+----------
+
+
+The only thread safe collection objects were Hashtable and synchronized Map prior to JDK 5. 
+
+-------internal working of concurrent hash map
+
+http://javahungry.blogspot.com/2015/02/how-concurrenthashmap-works-in-java-internal-implementation.html
+
+--------
+Fail Fast Vs Fail Safe Iterator
+http://javahungry.blogspot.com/2014/04/fail-fast-iterator-vs-fail-safe-iterator-difference-with-example-in-java.html
+
+
+
+http://www.javamex.com/tutorials/threads/thread_pools_queues.shtml
+
+ 

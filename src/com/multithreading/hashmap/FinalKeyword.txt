@@ -1,0 +1,42 @@
+Important points on final in Java
+
+1. Final keyword can be applied to member variable, local variable, method or class in Java.
+2. Final member variable must be initialized at the time of declaration or inside constructor, failure to do so will result in compilation error.
+
+3. You can not reassign value to final variable in Java.
+
+4. Local final variable must be initializing during declaration.
+
+5. Only final variable is accessible inside anonymous class in Java.
+
+6. Final method can not be overridden in Java.
+
+7. Final class can not be inheritable in Java.
+
+8. Final is different than finally keyword which is used on Exception handling in Java.
+
+9. Final should not be confused with finalize() method which is declared in object class and called before an object is garbage collected by JVM.
+
+10. All variable declared inside java interface are implicitly final.
+
+11. Final and abstract are two opposite keyword and a final class can not be abstract in java.
+
+12. Final methods are bonded during compile time also called static binding.
+
+13. Final variables which is not initialized during declaration are called blank final variable and must be initialized on all constructor either explicitly or by calling this(). Failure to do so compiler will complain as "final variable (name) might not be initialized".
+
+14. Making a class, method or variable final in Java helps to improve performance because JVM gets an opportunity to make assumption and optimization.
+
+15. As per Java code convention final variables are treated as constant and written in all Caps e.g.
+
+private final int COUNT=10;
+
+16. Making a collection reference variable final means only reference can not be changed but you can add, remove or change object inside collection. For example:
+
+private final List loans = new ArrayList();
+loans.add(“home loan”);  //valid
+loans.add("personal loan"); //valid
+loans = new Vector();  //not valid
+
+
+Read more: http://javarevisited.blogspot.com/2011/12/final-variable-method-class-java.html#ixzz4jhsfeLV5
