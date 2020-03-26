@@ -1,0 +1,1 @@
++ only final variables are allowed in lambda as, it is a function inside a function, but java has to create that function outside the method from where it is declared, so it has to make a copy of that variable. It may appear to programmer that the value of that variable is getting changed, but it does not as a copy is passed there.
